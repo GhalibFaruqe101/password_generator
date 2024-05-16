@@ -1,12 +1,10 @@
 import sys
-sys.path.append(r'C:/Users/USER/AppData/Local/Programs/Python/Python312/Lib/site-packages')
-
 import tkinter as tk
 from tkinter import messagebox
 import random
 import string
 import pyperclip
-
+#This section is the password generator Algorithm
 def generate_password():
     
     pass_length = int(entry.get())
@@ -25,14 +23,14 @@ def generate_password():
 def clear_password():
     result_label.config(text="")
    
-
+#To copy the generated password
 def copy_password():
     generated_password = result_label.cget("text").split(": ")[-1]
     pyperclip.copy(generated_password)
     message = f"Password Copied: /n/{generated_password}"
     messagebox.showinfo('Password Copied ', message)
     
-    
+    #Gui part of the program
     
 window_x =600
 window_y=500
@@ -42,9 +40,9 @@ root.title("Password Generator")
 root.geometry(f"{window_x}x{window_y}")
 root.configure(bg="#00FFFF")
 root.resizable(0,0)
-icon = tk.PhotoImage(file='C:/Users/USER/OneDrive/Documents/programing/python/Password_generator/image/icon.png')
+icon = tk.PhotoImage(file='add_the_file_location_for_image')
 root.iconphoto(False, icon)
-background_image = tk.PhotoImage(file='C:/Users/USER/OneDrive/Documents/programing/python/Password_generator/image/background.png')
+background_image = tk.PhotoImage(file='add_the_file_location_for_image')
 
 background_label = tk.Label(root, image=background_image)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
@@ -66,7 +64,7 @@ entry.place(relx=0.45,rely=0.16)
 
 
 
-on_button_photo = tk.PhotoImage(file='C:/Users/USER/OneDrive/Documents/programing/python/Password_generator/image/icon2.png')
+on_button_photo = tk.PhotoImage(file='add_the_file_location_for_image')
 resize_photo = on_button_photo.subsample(1,1)
 generate_button = tk.Button(root, text="Generate Password", image  = resize_photo, command=generate_password, font=("Arial", 12))
 generate_button.place(relx=0.34, rely=0.3, anchor=tk.CENTER)
@@ -77,7 +75,7 @@ generate_button.place(relx=0.34, rely=0.3, anchor=tk.CENTER)
 
 
 
-on_button_photo_clear = tk.PhotoImage(file='C:/Users/USER/OneDrive/Documents/programing/python/Password_generator/image/icon3.png')
+on_button_photo_clear = tk.PhotoImage(file='add_the_file_location_for_image')
 resize_photo_clear = on_button_photo_clear.subsample(1,1)
 clear_button = tk.Button(root, text ="Clear Password", image= resize_photo_clear, command =clear_password, font=("Arial", 12))
 clear_button.place(relx=0.62, rely=0.3, anchor=tk.CENTER)
